@@ -1,0 +1,20 @@
+
+def change
+    create_table :bookings do |t|
+      t.references :user, null: false, foreign_key: true
+      t.references :chef, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+
+
+  def change
+    create_table :chefs do |t|
+      t.string :cat_name
+      t.string :speciality
+      t.references :user, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
