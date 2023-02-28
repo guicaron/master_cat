@@ -8,6 +8,9 @@ gem "devise"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
+#cloudinary
+gem "dotenv-rails", groups: [:development, :test]
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
