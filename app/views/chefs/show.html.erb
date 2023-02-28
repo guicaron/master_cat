@@ -6,6 +6,6 @@
 <%= @chef.price %> </p>
 
 <%= link_to "Delete",
-  root_path(@chef),
+  chef_path(@chef),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
