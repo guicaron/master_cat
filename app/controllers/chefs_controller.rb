@@ -1,5 +1,5 @@
 class ChefsController < ApplicationController
-  before_action :find_chef, only: [:show]
+  before_action :find_chef, only: %i[show destroy]
 
   def home
     @chefs = Chef.all
@@ -9,21 +9,22 @@ class ChefsController < ApplicationController
     @chef = Chef.new
   end
 
+  def create
+    @chef = Chef.new(chef_params)
+    if @chef.save
+      redirect_to chef_path(@chef.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   def show
   end
 
-  # def new
-  #   @chef = Chef.new
-  # end
+  def destroy
+    @chef.destroy
+    redirect_to chefs_path, status: :see_other
 
-  # def create
-  #   @chef = Chef.new(chef_params)
-  #   # if  @chef.save
-  #   # #   redirect_to (@)
-  #   # # else
-  #   # #   render :new, status: :unprocessable_entity
-  #   # # end
-  # end
+  end
 
   private
 
@@ -35,7 +36,9 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
   end
 
-  # def chef_params
-  #   params.require(:chef.permit(:speciality, :cat_name, :price))
-  # end
+  def chef_params
+    params.require(:chef).permit(:cat_name, :speciality, :price)
+  end
+
+
 end

@@ -5,13 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-<<<<<<< HEAD
-puts "creating seed"
-=======
 
 puts 'Creating Chef Cat'
 
->>>>>>> master
 u1 = User.new(email: 'blabla@blabla.fr', password: "azerty")
 u2 = User.new(email: 'blabla2@blabla.fr', password: "azerty")
 u3 = User.new(email: 'blabla3@blabla.fr', password: "azerty")
@@ -28,9 +24,4 @@ c1.save
 c2.save
 c3.save
 c4.save
-<<<<<<< HEAD
-puts " Seed ok"
-=======
 
-puts "Done... #{Chef.count}"
->>>>>>> master
