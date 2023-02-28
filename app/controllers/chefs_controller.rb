@@ -35,7 +35,7 @@ class ChefsController < ApplicationController
   def destroy
     @chef = Chef.find(params[:id])
     @chef.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to chef_path, status: :see_other
   end
 
   private
