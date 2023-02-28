@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts 'Creating Chef Cat'
+
 u1 = User.new(email: 'blabla@blabla.fr', password: "azerty")
 u2 = User.new(email: 'blabla2@blabla.fr', password: "azerty")
 u3 = User.new(email: 'blabla3@blabla.fr', password: "azerty")
@@ -21,4 +24,4 @@ c1.save
 c2.save
 c3.save
 c4.save
-puts " Seed ok"
+
