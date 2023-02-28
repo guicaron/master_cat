@@ -5,11 +5,12 @@ class ChefsController < ApplicationController
 
   def create
     @chef = Chef.new(chef_params)
-    @chef.save
+    # if  @chef.save
+    # #   redirect_to (@)
+    # # else
+    # #   render :new, status: :unprocessable_entity
+    # # end
   end
-
-
-
 
   private
   def chef_params
