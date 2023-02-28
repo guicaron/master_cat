@@ -33,7 +33,6 @@ class ChefsController < ApplicationController
 
   def find_chef
     @chef = Chef.find(params[:id])
-
   end
 
   # def chef_params
