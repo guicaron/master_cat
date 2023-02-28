@@ -1,7 +1,9 @@
 class ChefsController < ApplicationController
-<<<<<<< HEAD
+
   def home
-=======
+    @chefs = Chef.all
+  end
+
   def new
     @chef = Chef.new
   end
@@ -16,8 +18,8 @@ class ChefsController < ApplicationController
   end
 
   private
+
   def chef_params
-    params.require(:chef.permit(:speciality, :cat_name, :price))
->>>>>>> 01caa10e59e9dce68f49fe4e7a294a6b9ecaf2e5
+    params.require(:chef).permit(:speciality, :cat_name, :price)
   end
 end
