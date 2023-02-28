@@ -42,3 +42,5 @@
   <%= link_to 'See more details', chef_path(chef)%></p>
 <% end %>
 </div>
+<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
+  class: "dropdown-item" %>
