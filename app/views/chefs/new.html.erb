@@ -1,6 +1,6 @@
 <%= simple_form_for(@chef) do |f| %>
   <%= f.input :cat_name %>
-  <%= f.input :speciality %>
+  <%= f.input :speciality, collection: ["French", "Italian", "Mexican", "American", "German", "Japanese", "Chinese"]%>
   <%= f.input :price %>
   <%= f.submit %>
 <% end %>
