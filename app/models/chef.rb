@@ -4,4 +4,5 @@ class Chef < ApplicationRecord
   validates :cat_name, presence: true, uniqueness: true
   validates :speciality, presence: true
   validates :price, presence: true
+  validates :price, numericality: {only_integer: true}
 end
