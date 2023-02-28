@@ -1,6 +1,5 @@
 class ChefsController < ApplicationController
-
-  before_action :find_chef, only: %i[show destroy]
+  before_action :find_chef, only: %i[show destroy edit update]
 
   def home
     @chefs = Chef.all
@@ -22,8 +21,15 @@ class ChefsController < ApplicationController
     end
   end
 
-
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @chef.update(chef_params)
+    redirect_to root_path(@chef)
   end
 
   def destroy
@@ -33,6 +39,11 @@ class ChefsController < ApplicationController
   end
 
   private
+
+  def find_chef
+    @chef = Chef.find(params[:id])
+  end
+
   def chef_params
     params.require(:chef).permit(:speciality, :cat_name, :price, :user_id)
   end
