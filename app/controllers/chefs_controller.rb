@@ -16,6 +16,7 @@ class ChefsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
   def show
   end
@@ -23,7 +24,6 @@ class ChefsController < ApplicationController
   def destroy
     @chef.destroy
     redirect_to chefs_path, status: :see_other
-
   end
 
   private
@@ -34,12 +34,5 @@ class ChefsController < ApplicationController
 
   def find_chef
     @chef = Chef.find(params[:id])
-
   end
-
-  def chef_params
-    params.require(:chef).permit(:cat_name, :speciality, :price)
-  end
-
-
 end
