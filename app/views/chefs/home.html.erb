@@ -1,8 +1,8 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "master_cat.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <%if user_signed_in?%>
+          <li class="nav-item active"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </li>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
@@ -33,8 +35,16 @@
   </div>
 </div>
 
+<div class="banner">
+  <div class="container">
+    <h1>Book a Chef Cat !</h1>
+    <p>Change your cooking method, trust the cat, it will kaned the pizza with its PAWS ! </p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
 <h1> ALL THE CHEFS - Miaow  coucou</h1>
-<div class="container">
+<div class="container-list">
 <% @chefs.each do |chef| %>
   <p><b>Name of the Chef Cat:</b> <%= chef.cat_name %>
   <b>Speciality of the Chef Cat:</b> <%= chef.speciality %>
