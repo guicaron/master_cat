@@ -6,7 +6,6 @@ class Booking < ApplicationRecord
   validate :finishing_date_after_starting_date
 
 
-
   private
   def finishing_date_after_starting_date
     if finishing_date < starting_date
