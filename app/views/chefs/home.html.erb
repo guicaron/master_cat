@@ -1,4 +1,4 @@
-
+<%# Navbar________________________________ %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
@@ -35,27 +35,38 @@
   </div>
 </div>
 
-<div class="banner">
+<%# Banner________________________________ %>
+<div class="banner" style="background-image: url(https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677661582/catback_wsrgzd.jpg);">
   <div class="container">
     <h1>Book a Chef Cat !</h1>
-    <p>Change your cooking method, trust the cat, it will kaned the pizza with its PAWS ! </p>
+    <p>Change your cooking method, trust the cat, </p>
+    <p>it will kaned the pizza with its PAWS ! </p>
     <a class="btn btn-flat" href="#">Apply now</a>
   </div>
 </div>
 
-<h1> ALL THE CHEFS</h1>
+<h1> CHOOSE YOUR CHEF CAT </h1>
 
-<div class="container-list">
-<% @chefs.each do |chef| %>
-  <p><b>Name of the Chef Cat:</b> <%= chef.cat_name %>
-  <b>Speciality of the Chef Cat:</b> <%= chef.speciality %>
-  <b>Price of the Cooking service:</b> <%= chef.price %>€
-  <%= link_to 'See more details', chef_path(chef)%></p>
-<% end %>
+
+<%# a ajouter: <%= link_to 'See more details', chef_path(chef)%>
+<div class="container-homepage">
+  <% @chefs.each do |chef| %>
+    <div class="card">
+    <div><%= cl_image_tag chef.photo.key, class:"card-img" %></div>
+    <div class="card-info">
+      <p class="text-title"><%= chef.cat_name %> </p>
+      <p class="text-title"><%= chef.speciality %></p>
+    </div>
+    <div class="card-footer">
+    <span class="text-title"><%= chef.price %>€</span>
+    <div class="card-button">
+      <i class="fa-solid fa-cat fa-spin"></i>
+      <%= link_to 'Details', chef_path(chef)%>
+    </div>
+  </div></div>
+  <%end%>
 </div>
-
-
-
+<%# Button bottom________________________________ %>
 <div class="container-btn">
 <div type="button" class="btn btn-warning"><%= link_to 'Add a Chef Cat', new_chef_path%> </div>
 <div type="button" class="btn btn-warning"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
