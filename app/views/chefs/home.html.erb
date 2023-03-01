@@ -41,14 +41,9 @@
     <h1>Book a Chef Cat !</h1>
     <p>Change your cooking method, trust the cat, </p>
     <p>it will kaned the pizza with its PAWS ! </p>
-    <a class="btn btn-flat" href="#">Apply now</a>
   </div>
 </div>
 
-<h1> CHOOSE YOUR CHEF CAT </h1>
-
-
-<%# a ajouter: <%= link_to 'See more details', chef_path(chef)%>
 <div class="container-homepage">
   <% @chefs.each do |chef| %>
     <div class="card">
@@ -60,8 +55,9 @@
     <div class="card-footer">
     <span class="text-title"><%= chef.price %>€</span>
     <div class="card-button">
-      <i class="fa-solid fa-cat fa-spin"></i>
-      <%= link_to 'Details', chef_path(chef)%>
+      <%= link_to chef_path(chef) do %>
+        <i class="fa-solid fa-cat"></i>
+      <% end %>
     </div>
   </div></div>
   <%end%>
