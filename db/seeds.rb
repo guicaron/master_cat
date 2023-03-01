@@ -16,11 +16,11 @@ u1.save
 u2.save
 u3.save
 u4.save
-# c1 = Chef.new(cat_name: 'Billy', speciality: 'French', price: 45, user_id: 1)
-# c2 = Chef.new(cat_name: 'Bob', speciality: 'Italian', price: 50, user_id: 2)
-# c3 = Chef.new(cat_name: 'Sally', speciality: 'Italian', price: 50, user_id: 3)
-# c4 = Chef.new(cat_name: 'Johnny', speciality: 'French', price: 45, user_id: 4)
-# c1.save
-# c2.save
-# c3.save
-# c4.save
+c1 = Chef.new(cat_name: 'Billy', speciality: 'French', price: 45, user_id: 1)
+c2 = Chef.new(cat_name: 'Bob', speciality: 'Italian', price: 50, user_id: 2)
+c3 = Chef.new(cat_name: 'Sally', speciality: 'Italian', price: 50, user_id: 3)
+c4 = Chef.new(cat_name: 'Johnny', speciality: 'French', price: 45, user_id: 4)
+c1.save
+c2.save
+c3.save
+c4.save

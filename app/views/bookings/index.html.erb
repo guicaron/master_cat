@@ -1,0 +1,11 @@
+<h1>My bookings</h1>
+
+<ul>
+<% @bookings.each do |booking| %>
+  <li>
+  <%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %>
+  <%= booking.starting_date %> - <%= booking.finishing_date %>
+  <%= link_to 'Views details', booking_path(booking.id) %>
+  </li>
+<% end %>
+</ul>
