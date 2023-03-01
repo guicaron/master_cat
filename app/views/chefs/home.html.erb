@@ -47,7 +47,12 @@
 <div class="container-homepage">
   <% @chefs.each do |chef| %>
     <div class="card">
-    <div><%= cl_image_tag chef.photo.key, class:"card-img" %></div>
+    <% if chef.photo.attached? %>
+          <%= cl_image_tag chef.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
+          <%else %>
+          <%= image_tag "catback.jpg", height: 300, width: 400, crop: :fill, class: 'center-img' 'card-img-top' %>
+    <% end %>
+    </div>
     <div class="card-info">
       <p class="text-title"><%= chef.cat_name %> </p>
       <p class="text-title"><%= chef.speciality %></p>
