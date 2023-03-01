@@ -47,7 +47,7 @@
 <div class="container-homepage">
   <% @chefs.each do |chef| %>
     <div class="card">
-    <div><%= cl_image_tag chef.photo.key, class:"card-img" %></div>
+      <div><%= cl_image_tag chef.photo.key, class:"card-img" %> </div>
     <div class="card-info">
       <p class="text-title"><%= chef.cat_name %> </p>
       <p class="text-title"><%= chef.speciality %></p>
