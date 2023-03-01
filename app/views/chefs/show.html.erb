@@ -4,7 +4,7 @@
 
 <p><%= @chef.speciality %>
 <%= @chef.price %> </p>
-
+<%= cl_image_tag @chef.photo.key, height: 300, width: 400, crop: :fill %>
 <%= link_to 'Back Home', root_path %>
 
 <%= link_to "Delete",
