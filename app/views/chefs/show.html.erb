@@ -6,9 +6,9 @@
 <%= @chef.price %> euros </p>
 <%= link_to 'Back Home', root_path %>
  <% if  @chef.photo.attached? %>
-          <%= cl_image_tag @chef.photo.key, height: 300, width: 400, crop: :fill, class: 'center-img' %>
+          <%= cl_image_tag @chef.photo.key, height: 300, width: 400, crop: :fill, class: 'card-img' %>
           <%else %>
-          <%= image_tag "OIP.jpg", height: 300, width: 400, crop: :fill, class: 'center-img' 'card-img-top' %>
+          <%= image_tag "catback.jpg", height: 300, width: 400, crop: :fill, class: 'center-img' 'card-img-top' %>
     <% end %>
 
 <%= link_to "Delete",
