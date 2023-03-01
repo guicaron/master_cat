@@ -1,9 +1,9 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "master_cat.png" %>
-    <% end %>
+    <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "mastercat.png" %>
+    <% end %></div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,8 @@
   </div>
 </div>
 
-<h1> ALL THE CHEFS - Miaow  coucou</h1>
+<h1> ALL THE CHEFS</h1>
+
 <div class="container-list">
 <% @chefs.each do |chef| %>
   <p><b>Name of the Chef Cat:</b> <%= chef.cat_name %>
@@ -54,8 +55,9 @@
 </div>
 
 
- <%= link_to 'Add a Chef Cat', new_chef_path%>
 
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
-  class: "dropdown-item" %>
-
+<div class="container-btn">
+<div type="button" class="btn btn-warning"><%= link_to 'Add a Chef Cat', new_chef_path%> </div>
+<div type="button" class="btn btn-warning"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
+  class: "dropdown-item" %></div>
+</div>
