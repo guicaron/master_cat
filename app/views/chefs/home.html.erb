@@ -68,9 +68,7 @@
       <div class="card-footer">
       <span class="text-title"><%= chef.price %>€</span>
       <div class="card-button">
-        <%= link_to chef_path(chef) do %>
-          <i class="fa-solid fa-cat"></i>
-        <% end %>
+        <%= link_to 'details', chef_path(chef) %>
       </div>
     </div></div>
     <%end%>
