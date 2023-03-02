@@ -44,28 +44,35 @@
   </div>
 </div>
 
-<div class="container-homepage">
-  <% @chefs.each do |chef| %>
-    <div class="card">
-      <div><%= cl_image_tag chef.photo.key, class:"card-img" %> </div>
-    <div class="card-info">
-      <p class="text-title"><%= chef.cat_name %> </p>
-      <p class="text-title"><%= chef.speciality %></p>
-    </div>
-    <div class="card-footer">
-    <span class="text-title"><%= chef.price %>€</span>
-    <div class="card-button">
-      <%= link_to chef_path(chef) do %>
-        <i class="fa-solid fa-cat"></i>
-      <% end %>
-    </div>
-  </div></div>
-  <%end%>
+<%# Cards on Grid________________________________ %>
+<div class="container-center d-flex justify-content-center">
+  <div class="container-homepage">
+    <% @chefs.each do |chef| %>
+      <div class="card">
+        <% if  chef.photo.attached? %>
+          <%= cl_image_tag chef.photo.key,class:'card-img' %>
+        <%else %>
+          <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677683967/1b2b31760ec6ace9d732335318153ad4_ncscy0.jpg", class:'card-img' %>
+        <% end %>
+      <div class="card-info">
+        <p class="text-title"><%= chef.cat_name %> </p>
+        <p class="text-title"><%= chef.speciality %></p>
+      </div>
+      <div class="card-footer">
+      <span class="text-title"><%= chef.price %>€</span>
+      <div class="card-button">
+        <%= link_to chef_path(chef) do %>
+          <i class="fa-solid fa-cat"></i>
+        <% end %>
+      </div>
+    </div></div>
+    <%end%>
+  </div>
 </div>
+
 <%# Button bottom________________________________ %>
 <div class="container-btn">
 <div type="button" class="btn btn-warning"><%= link_to 'Add a Chef Cat', new_chef_path%> </div>
 <div type="button" class="btn btn-warning"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
   class: "dropdown-item" %></div>
 </div>
-<%# blabla %>

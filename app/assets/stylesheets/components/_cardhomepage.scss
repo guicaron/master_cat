@@ -9,6 +9,7 @@
 
  .card-img {
   width: 100%;
+  min-height: 152px;
   border-radius: .5rem;
   transition: .3s ease;
  }
@@ -52,7 +53,7 @@
 
  /*Hover*/
  .card-img:hover {
-  transform: translateY(-25%);
+  transform: translateY(-20%);
   box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
  }
 
@@ -62,11 +63,17 @@
  }
 
  .container-homepage{
-  margin-left: 20px;
+
   margin-top: 20px;
   margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 7px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+
  }
+
+//  .container-center{
+//  }
