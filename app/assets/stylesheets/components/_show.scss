@@ -29,6 +29,7 @@ img{
 .btn-show{
   margin-top: 70px;
   justify-content: space-between;
+  text-align: center;
   width: max-content;
 }
 .btn-show a{
@@ -39,3 +40,8 @@ img{
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+.btn-show a:hover {
+  border: 1px solid $orange;
+  background-color: $orange;
+  color: black;
+ }

@@ -39,7 +39,7 @@
       <% if  @chef.photo.attached? %>
         <%= cl_image_tag @chef.photo.key %>
       <%else %>
-        <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677683967/1b2b31760ec6ace9d732335318153ad4_ncscy0.jpg" %>
+        <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677770982/uglycat_gri0gv.jpg" %>
       <% end %>
   </div>
   <div class="details-show">
@@ -60,7 +60,6 @@
 "I don't need a sous chef, I have my trusty whisker-tongs."</p>
     </div>
     <div class="btn-show">
-      <%= link_to 'Back Home', root_path %>
       <%= link_to "Delete",
         chef_path(@chef),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
