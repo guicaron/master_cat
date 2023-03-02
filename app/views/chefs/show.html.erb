@@ -1,3 +1,4 @@
+<%# Navbar________________________________ %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
@@ -17,11 +18,9 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677773470/thug-cat-drole-de-chat-autocollant_zmo4qv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to 'Become a Chef Cat', new_chef_path%>
             </div>
           </li>
         <% else %>
@@ -46,26 +45,24 @@
     <div class="text-show">
       <h2><%= @chef.cat_name %></h2>
       <h3><%= @chef.speciality %></h3>
-      <h4><%= @chef.price %> euros </h4>
+      <h4><b><%= @chef.price %>€/day</b></h4>
       <p>"I don't always cook at home, but when I do, I wear my fanciest apron."
-
-"Cooking is like a box of chocolates, you never know what you're gonna get... unless you follow the recipe, of course."
-
-"I'm not lazy, I'm just conserving my energy for the really important things... like stirring the risotto."
-
-"I don't always cook with wine, but when I do, I put some in the food too."
-
-"I don't make mistakes in the kitchen, I just improvise new recipes."
-
-"I don't need a sous chef, I have my trusty whisker-tongs."</p>
+          "Cooking is like a box of chocolates, you never know what you're gonna get... unless you follow the recipe, of course."
+          "I'm not lazy, I'm just conserving my energy for the really important things... like stirring the risotto."
+          "I don't always cook with wine, but when I do, I put some in the food too."
+          "I don't make mistakes in the kitchen, I just improvise new recipes."
+          "I don't need a sous chef, I have my trusty whisker-tongs."</p>
     </div>
     <div class="btn-show">
-      <%= link_to "Delete",
+     <div class="book"> <%= link_to 'Book miaow', new_chef_booking_path(@chef.id) %></div>
+    </div>
+
+    <div class="btn-show">
+      <%= link_to "Delete miaow",
         chef_path(@chef),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
-      <%= link_to 'update or edit', edit_chef_path %>
-      <%= link_to 'Book me', new_chef_booking_path(@chef.id) %>
+      <%= link_to 'Edit miaow', edit_chef_path %>
     </div>
   </div>
 </div>
