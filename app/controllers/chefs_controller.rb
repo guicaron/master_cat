@@ -2,7 +2,11 @@ class ChefsController < ApplicationController
   before_action :find_chef, only: %i[show destroy edit update]
 
   def home
-    @chefs = Chef.all
+    if params[:query].present?
+      @chefs = Chef.search_by_cat_name_and_speciality(params[:query])
+    else
+      @chefs = Chef.all
+    end
   end
 
   def new

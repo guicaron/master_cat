@@ -41,6 +41,14 @@
     <h1>Book a Chef Cat !</h1>
     <p>Change your cooking method, trust the cat, </p>
     <p>it will kaned the pizza with its PAWS ! </p>
+      <%= form_with url: root_path, method: :get, class: "search-bar" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a cat chef"
+        %>
+        <%= submit_tag "Search", class: "btn btn-dark" %>
+      <% end %>
   </div>
 </div>
 
@@ -69,3 +77,19 @@
   class: "dropdown-item" %></div>
 </div>
 <%# blabla %>
+
+<%# Search bar %>
+
+
+<%# Affichage du resultat %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="chefs">
+        <% @chefs.each do |chef| %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
