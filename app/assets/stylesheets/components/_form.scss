@@ -1,0 +1,28 @@
+.container-form {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 15%;
+  margin-top: 100px;
+}
+
+.form-edit {
+  width: 100%;
+  background-color: rgba(243, 170, 0, 0.700);
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  border-radius: 25px;
+  border: 8px dashed #faa34c;
+}
+
+.title-edit {
+  text-align: center;
+  margin-top: 15px ;
+}
+
+.center-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
