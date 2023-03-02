@@ -1,0 +1,7 @@
+<h1>Edit your booking</h1>
+
+<%= simple_form_for [@chef, @booking] do |f| %>
+<%= f.input :starting_date, as: :date %>
+<%= f.input :finishing_date, as: :date %>
+  <%= f.submit %>
+<% end %>

@@ -13,3 +13,8 @@
 <h4><%= @booking.finishing_date %></h4>
 <br>
 <h4><%= @booking.chef.price %>€</h4>
+
+<%= link_to "Delete",
+  booking_path(@booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
