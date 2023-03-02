@@ -6,4 +6,7 @@ class Chef < ApplicationRecord
   validates :price, presence: true
   validates :price, numericality: { only_integer: true }
   has_one_attached :photo
+
+  include PgSearch::Model
+  pg_search_scope :search_by_cat_name_and_speciality, against: [ :cat_name, :speciality ], using: {tsearch: { prefix: true }}
 end
