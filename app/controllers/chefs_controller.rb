@@ -33,7 +33,7 @@ class ChefsController < ApplicationController
 
   def update
     @chef.update(chef_params)
-    redirect_to root_path(@chef)
+    redirect_to chef_path(@chef.id)
   end
 
   def destroy
