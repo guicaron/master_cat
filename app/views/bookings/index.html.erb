@@ -39,8 +39,9 @@
       <ul>
       <% @bookings.each do |booking| %>
       <li>
+
         <div class="card-product-bookings">
-          <%# <%= cl_image_tag booking.chef_id.photo.key,class:'card-img' %>
+        <%# <%= cl_image_tag booking.chef.photo.key,class:'card-img'%>
           <div class="card-product-infos-bookings">
             <p><strong><%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %></strong></p>
             <p><strong> from </strong><%= booking.starting_date %></p>
