@@ -17,7 +17,7 @@
  .card-footer {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   padding-top: 10px;
   border-top: 1px solid #ddd;
@@ -29,11 +29,20 @@
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5;
+  color: $orange;
  }
 
  .text-body {
   font-size: .9em;
   padding-bottom: 10px;
+  font-weight: bolder;
+  font-size: 120%;
+
+ }
+
+ .text-price {
+  font-size: 1.5em;
+  font-weight: bolder;
  }
 
  /*Button*/
@@ -52,21 +61,20 @@
   color: $orange;
 }
 
- /*Hover*/
- .card-img:hover {
+/*Hover*/
+.card-img:hover {
   transform: translateY(-20%);
   box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
- }
+}
 
- .card-button:hover {
+.card-button:hover {
   border: 1px solid $orange;
   background-color: $orange;
 }
 .card-button:hover a{
-color: black !important;
+  color: black !important;
 }
- .container-homepage{
-
+.container-homepage{
   margin-top: 20px;
   margin-bottom: 50px;
   margin-left: auto;
@@ -75,13 +83,12 @@ color: black !important;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
+}
 
- }
+body{
+ background-image: url(https://res.cloudinary.com/dcd4fkkhk/image/upload/o_50/v1677839387/14710_w2oark.jpg);
+ object-fit: cover;
+ background-size: 50%;
+ background-repeat: repeat;
 
- body{
-  background-image: url(https://res.cloudinary.com/dcd4fkkhk/image/upload/o_50/v1677839387/14710_w2oark.jpg);
-  object-fit: cover;
-  background-size: 50%;
-  background-repeat: repeat;
-
- }
+}

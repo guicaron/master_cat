@@ -65,10 +65,10 @@
         <% end %>
       <div class="card-info">
         <p class="text-title"><%= chef.cat_name %> </p>
-        <p class="text-title"><%= chef.speciality %></p>
+        <p class="text-body"><%= chef.speciality %></p>
       </div>
       <div class="card-footer">
-      <span class="text-title"><%= chef.price %>€</span>
+      <span class="text-price"><%= chef.price %>€</span>
       <div class="card-button">
         <%= link_to 'details', chef_path(chef) %>
       </div>
