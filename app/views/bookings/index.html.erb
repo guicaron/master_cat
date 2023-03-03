@@ -33,25 +33,24 @@
 </div>
 
 
-
-<div class="container-form">
-
-
-
-  <h1 class="title-edit"> 🐈🐈🐈 My bookings 🐈🐈🐈 </h1>
-    <ul>
-    <% @bookings.each do |booking| %>
-    <li>
-      <div class="card-product-bookings">
-        <%# <%= cl_image_tag booking.chef_id.photo.key,class:'card-img' %>
-        <div class="card-product-infos">
-          <p><strong><%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %></strong></p>
-          <p><strong> from </strong> <%= booking.starting_date %><strong> to </strong><%= booking.finishing_date %></p>
-          <p><%= link_to 'Views details', booking_path(booking.id) %></p>
+<div class="container-bookings">
+  <div class="container-list">
+    <h1 class="title-edit">My bookings</h1>
+      <ul>
+      <% @bookings.each do |booking| %>
+      <li>
+        <div class="card-product-bookings">
+          <%# <%= cl_image_tag booking.chef_id.photo.key,class:'card-img' %>
+          <div class="card-product-infos-bookings">
+            <p><strong><%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %></strong></p>
+            <p><strong> from </strong><%= booking.starting_date %></p>
+            <p><strong> to </strong><%= booking.finishing_date %></p>
+            <p><%= link_to 'Views details', booking_path(booking.id) %></p>
+          </div>
         </div>
-      </div>
-    </li>
-    <% end %>
-    </ul>
+      </li>
+      <% end %>
+      </ul>
 
+  </div>
 </div>
