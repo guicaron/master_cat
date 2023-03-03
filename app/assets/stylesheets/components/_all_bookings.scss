@@ -19,14 +19,14 @@ ul{
 
 .card-product-bookings{
     // overflow: hidden;
-    height: 190px;
-    background: $orange;
+    height: 100%;
+    background: rgba(243, 170, 0, 0.9);;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin: 10px;
-
     border-radius: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
-.card-product-infos-bookings{
-  padding: 20px;
+.card-list-item-b{
 }
