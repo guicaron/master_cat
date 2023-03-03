@@ -27,21 +27,12 @@ img{
 }
 
 .btn-show{
-<<<<<<< HEAD
-  display: inline-flex;
-  margin-top: 70px;
-  // justify-content: space-between;
-  text-align: center;
-  // width: max-content;
-=======
   display: flex;
   justify-content: space-evenly;
   text-align: center;
   margin-top: 30px;
-
->>>>>>> 5eb66fe0ad45de0a22981492640e121234208375
-
 }
+
 .btn-show a{
   text-decoration: none !important;
   padding: 5px 10px;
@@ -50,19 +41,13 @@ img{
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
 .btn-show a:hover {
   border: 1px solid $orange;
   background-color: $orange;
   color: black;
  }
 
-<<<<<<< HEAD
-.book{
-  margin-top: 20px;
-}
-.book a{
-padding: 10px;
-=======
  button {
   padding: 0.5rem 2.5rem 0.5rem 2.5rem;
   box-shadow: 0px 0px 0px 3px black;
@@ -128,5 +113,4 @@ button:active::before {
   100% {
     transform: translateX(140px);
   }
->>>>>>> 5eb66fe0ad45de0a22981492640e121234208375
 }
