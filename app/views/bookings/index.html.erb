@@ -39,22 +39,21 @@
   <div class="container-list">
     <h1 class="title-edit">My bookings</h1>
       <ul>
-      <% @bookings.each do |booking| %>
-      <li>
+        <% @bookings.each do |booking| %>
+          <li>
+            <div class="card-product-bookings">
 
-        <div class="card-product-bookings">
-        <%# <%= cl_image_tag booking.chef.photo.key,class:'card-img'%>
-          <div class="card-product-infos-bookings">
-            <p><strong><%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %></strong></p>
-            <p><strong> from </strong><%= booking.starting_date %></p>
-            <p><strong> to </strong><%= booking.finishing_date %></p>
-            <p><%= link_to 'Views details', booking_path(booking.id) %></p>
-          </div>
-        </div>
-      </li>
-      <% end %>
+            <%= cl_image_tag booking.chef.photo.key,class:'card-img'%>
+              <div class="card-product-infos-bookings">
+                <p><strong><%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %></strong></p>
+                <p><strong> from </strong><%= booking.starting_date.strftime("%d/%m/%Y") %></p>
+                <p><strong> to </strong><%= booking.finishing_date.strftime("%d/%m/%Y") %></p>
+                <p><%= link_to 'Views details', booking_path(booking.id) %></p>
+              </div>
+            </div>
+          </li>
+        <% end %>
       </ul>
-
   </div>
 </div>
 
