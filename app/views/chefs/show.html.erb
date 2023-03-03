@@ -1,20 +1,68 @@
-<h1><%= @chef.cat_name %></h1>
+<%# Navbar________________________________ %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "mastercat.png" %>
+    <% end %></div>
 
-<h2>Description 😽</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<p><%= @chef.speciality %>
-<%= @chef.price %> euros </p>
-<%= link_to 'Back Home', root_path %>
-<% if  @chef.photo.attached? %>
-  <%= cl_image_tag @chef.photo.key, height: 300, width: 400, crop: :fill, class: 'card-img' %>
-<%else %>
-  <%= image_tag "catback.jpg", height: 300, width: 400, crop: :fill, class: 'center-img' 'card-img-top' %>
-<% end %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%if user_signed_in?%>
+          <li class="nav-item active"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677773470/thug-cat-drole-de-chat-autocollant_zmo4qv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to 'Become a Chef Cat', new_chef_path%>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Delete",
-  chef_path(@chef),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div class="container-show">
+  <div class="img-show">
+      <% if  @chef.photo.attached? %>
+        <%= cl_image_tag @chef.photo.key %>
+      <%else %>
+        <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677770982/uglycat_gri0gv.jpg" %>
+      <% end %>
+  </div>
+  <div class="details-show">
+    <div class="text-show">
+      <h2><%= @chef.cat_name %></h2>
+      <h3><%= @chef.speciality %></h3>
+      <h4><b><%= @chef.price %>€/day</b></h4>
+      <p>"I don't always cook at home, but when I do, I wear my fanciest apron."
+          "Cooking is like a box of chocolates, you never know what you're gonna get... unless you follow the recipe, of course."
+          "I'm not lazy, I'm just conserving my energy for the really important things... like stirring the risotto."
+          "I don't always cook with wine, but when I do, I put some in the food too."
+          "I don't make mistakes in the kitchen, I just improvise new recipes."
+          "I don't need a sous chef, I have my trusty whisker-tongs."</p>
+    </div>
+    <div class="btn-show">
+     <div class="book"> <%= link_to 'Book miaow', new_chef_booking_path(@chef.id) %></div>
+    </div>
 
-<%= link_to 'update or edit', edit_chef_path %>
-<%= link_to 'Book me', new_chef_booking_path(@chef.id) %>
+    <div class="btn-show">
+      <%= link_to "Delete miaow",
+        chef_path(@chef),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      <%= link_to 'Edit miaow', edit_chef_path %>
+    </div>
+  </div>
+</div>

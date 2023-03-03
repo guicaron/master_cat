@@ -3,7 +3,8 @@
   <div class="container-fluid">
     <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "mastercat.png" %>
-    <% end %></div>
+    <% end %>
+</div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,18 +12,16 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in ?%>
+        <% if user_signed_in? %>
           <li class="nav-item active"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677773470/thug-cat-drole-de-chat-autocollant_zmo4qv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to 'Become a Chef Cat', new_chef_path%>
             </div>
           </li>
         <% else %>
@@ -41,6 +40,14 @@
     <h1>Book a Chef Cat !</h1>
     <p>Change your cooking method, trust the cat, </p>
     <p>it will kaned the pizza with its PAWS ! </p>
+      <%= form_with url: root_path, method: :get, class: "search-bar" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a cat chef"
+        %>
+        <%= submit_tag "Search", class: "btn btn-dark" %>
+      <% end %>
   </div>
 </div>
 
@@ -52,7 +59,7 @@
         <% if  chef.photo.attached? %>
           <%= cl_image_tag chef.photo.key,class:'card-img' %>
         <%else %>
-          <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677683967/1b2b31760ec6ace9d732335318153ad4_ncscy0.jpg", class:'card-img' %>
+          <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677770982/uglycat_gri0gv.jpg", class:'card-img' %>
         <% end %>
       <div class="card-info">
         <p class="text-title"><%= chef.cat_name %> </p>
@@ -61,18 +68,9 @@
       <div class="card-footer">
       <span class="text-title"><%= chef.price %>€</span>
       <div class="card-button">
-        <%= link_to chef_path(chef) do %>
-          <i class="fa-solid fa-cat"></i>
-        <% end %>
+        <%= link_to 'details', chef_path(chef) %>
       </div>
     </div></div>
     <%end%>
   </div>
-</div>
-
-<%# Button bottom________________________________ %>
-<div class="container-btn">
-<div type="button" class="btn btn-warning"><%= link_to 'Add a Chef Cat', new_chef_path%> </div>
-<div type="button" class="btn btn-warning"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
-  class: "dropdown-item" %></div>
 </div>

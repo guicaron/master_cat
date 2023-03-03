@@ -1,8 +1,48 @@
-<h1>Edit your service 👨‍🍳</h1>
+<%# Navbar________________________________ %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "mastercat.png" %>
+    <% end %></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%if user_signed_in?%>
+          <li class="nav-item active"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677773470/thug-cat-drole-de-chat-autocollant_zmo4qv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to 'Become a Chef Cat', new_chef_path%>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for(@chef) do |f| %>
-  <%= f.input :cat_name %>
-  <%= f.input :speciality, collection: ["French", "Italian", "Mexican", "American", "German", "Japanese", "Chinese"]%>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="container-form">
+
+  <div class="form-edit">
+  <h1 class="title-edit">Edit your service 👨‍🍳</h1>
+    <div class="center-form">
+      <%= simple_form_for(@chef) do |f| %>
+        <%= f.input :cat_name %>
+        <%= f.input :speciality, collection: ["French", "Italian", "Mexican", "American", "German", "Japanese", "Chinese"]%>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

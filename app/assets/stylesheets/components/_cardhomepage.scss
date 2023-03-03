@@ -25,6 +25,7 @@
 
  /*Text*/
  .text-title {
+  margin-top: 10px;
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5;
@@ -58,10 +59,12 @@
  }
 
  .card-button:hover {
-  border: 1px solid #ffcaa6;
-  background-color: #ffcaa6;
- }
-
+  border: 1px solid $orange;
+  background-color: $orange;
+}
+.card-button:hover a{
+color: black !important;
+}
  .container-homepage{
 
   margin-top: 20px;
