@@ -35,28 +35,29 @@
 </div>
 
 
-<div class="container-show">
-  <br>
-  <div class="details-show">
-  <h1 class="title-edit" id="book-title">My reservation 📖</h1>
-    <div class="text-show">
-      <h4><%= @booking.chef.cat_name %></h4>
-      <br>
-      <h4><%= @booking.chef.speciality %></h4>
-      <br>
-      <h4><%= @booking.starting_date.strftime("%d/%m/%Y") %></h4>
-      <br>
-      <h4><%= @booking.finishing_date.strftime("%d/%m/%Y") %></h4>
-      <br>
-      <h4><%= @booking.chef.price %>€</h4>
+<div class="container-show ">
+  <div class="img-show">
+      <% if  @booking.chef.photo.attached? %>
+        <%= cl_image_tag @booking.chef.photo.key %>
+      <%else %>
+        <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677770982/uglycat_gri0gv.jpg" %>
+      <% end %>
+  </div>
+  <div class="details-show ok">
+    <div class="text-show center" >
+      <h2><%= @booking.chef.cat_name %></h2>
+      <h3><%= @booking.chef.speciality %></h3>
+      <h4><b><%= @booking.chef.price %>€/day</b></h4>
+      <h3><strong> from </strong><%= @booking.starting_date.strftime("%d/%m/%Y") %></h3>
+      <h3><strong> to </strong><%= @booking.finishing_date.strftime("%d/%m/%Y") %></h3>
+
     </div>
 
     <div class="btn-show">
-      <%= link_to "Delete",
+      <%= link_to "Delete miaow",
         booking_path(@booking),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
     </div>
   </div>
-
 </div>
