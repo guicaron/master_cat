@@ -53,8 +53,12 @@
           "I don't make mistakes in the kitchen, I just improvise new recipes."
           "I don't need a sous chef, I have my trusty whisker-tongs."</p>
     </div>
-    <div class="btn-show">
-     <div class="book"> <%= link_to 'Book miaow', new_chef_booking_path(@chef.id) %></div>
+
+
+    <div class="book-btn">
+      <button>
+        <%= link_to 'Book miaow', new_chef_booking_path(@chef.id) %>
+      </button>
     </div>
 
     <div class="btn-show">
