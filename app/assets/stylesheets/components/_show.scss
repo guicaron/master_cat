@@ -27,11 +27,19 @@ img{
 }
 
 .btn-show{
+<<<<<<< HEAD
   display: inline-flex;
   margin-top: 70px;
   // justify-content: space-between;
   text-align: center;
   // width: max-content;
+=======
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: 30px;
+
+>>>>>>> 5eb66fe0ad45de0a22981492640e121234208375
 
 }
 .btn-show a{
@@ -48,9 +56,77 @@ img{
   color: black;
  }
 
+<<<<<<< HEAD
 .book{
   margin-top: 20px;
 }
 .book a{
 padding: 10px;
+=======
+ button {
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  box-shadow: 0px 0px 0px 3px black;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: $orange;
+  position: relative;
+  transition: all .9s ease-in-out;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+button a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+button a:hover{
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+.book-btn{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover {
+  background-color: $orange;
+  color: white;
+}
+
+button::before {
+  content: "😽";
+  position: absolute;
+  left: -0rem;
+  top: 0rem;
+  opacity: 1;
+  font-size: 1.55rem;
+  transition: all .9s ease-in-out;
+  transform: rotate(0deg);
+}
+
+button:hover::before {
+  content: "😻";
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(40deg);
+  font-size: 2.5rem;
+  top: -0.75rem;
+  transition: all .9s ease-in-out;
+  animation: rightRun 2s forwards;
+}
+
+button:active::before {
+  content: "😻";
+}
+
+@keyframes rightRun {
+  100% {
+    transform: translateX(140px);
+  }
+>>>>>>> 5eb66fe0ad45de0a22981492640e121234208375
 }
