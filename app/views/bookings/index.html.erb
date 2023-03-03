@@ -1,11 +1,57 @@
-<h1>My bookings</h1>
 
-<ul>
-<% @bookings.each do |booking| %>
-  <li>
-  <%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %>
-  <%= booking.starting_date %> - <%= booking.finishing_date %>
-  <%= link_to 'Views details', booking_path(booking.id) %>
-  </li>
-<% end %>
-</ul>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div id="catlogo"><%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "mastercat.png" %>
+    <% end %></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%if user_signed_in?%>
+          <li class="nav-item active"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677773470/thug-cat-drole-de-chat-autocollant_zmo4qv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to 'Become a Chef Cat', new_chef_path%>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-form">
+
+
+
+  <h1 class="title-edit"> 🐈🐈🐈 My bookings 🐈🐈🐈 </h1>
+    <ul>
+    <% @bookings.each do |booking| %>
+    <li>
+      <div class="card-product-bookings">
+        <%# <%= cl_image_tag booking.chef_id.photo.key,class:'card-img' %>
+        <div class="card-product-infos">
+          <p><strong><%= link_to booking.chef.cat_name, chef_path(booking.chef_id) %></strong></p>
+          <p><strong> from </strong> <%= booking.starting_date %><strong> to </strong><%= booking.finishing_date %></p>
+          <p><%= link_to 'Views details', booking_path(booking.id) %></p>
+        </div>
+      </div>
+    </li>
+    <% end %>
+    </ul>
+
+</div>
