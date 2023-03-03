@@ -34,7 +34,8 @@
 
 .search-bar {
   display: inline-flex;
-  width: 50%;
+  max-width: 50%;
+  min-width: 30%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
