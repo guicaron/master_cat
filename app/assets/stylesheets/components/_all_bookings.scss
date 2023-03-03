@@ -1,9 +1,13 @@
 .container-bookings{
     background-image: url(https://res.cloudinary.com/dcd4fkkhk/image/upload/v1677842825/7486972_ppct8o.jpg)!important;
     object-fit: cover;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 
 }
+
 
 .container-list{
   width: 50%;

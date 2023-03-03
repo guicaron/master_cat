@@ -39,9 +39,9 @@
   <div class="container-list">
     <h1 class="title-edit">My bookings</h1>
       <ul>
-      <% @bookings.each do |booking| %>
-      <li>
-
+        <% @bookings.each do |booking| %>
+          <li>
+            <div class="card-product-bookings">
         <div class="card-product-bookings">
         <%# <%= cl_image_tag booking.chef.photo.key,class:'card-img'%>
           <div class="card-product-infos-bookings">
@@ -54,7 +54,6 @@
       </li>
       <% end %>
       </ul>
-
   </div>
 </div>
 
