@@ -34,8 +34,7 @@
 
 .search-bar {
   display: inline-flex;
-  max-width: 50%;
-  min-width: 30%;
+  width: 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -46,6 +45,6 @@
 .greys {
   font-family: 'Open Sans', sans-serif;
   font-family: 'Pacifico', cursive;
-  font-size: 85px !important;
+  font-size: px !important;
   color: #424649 !important;
 }
